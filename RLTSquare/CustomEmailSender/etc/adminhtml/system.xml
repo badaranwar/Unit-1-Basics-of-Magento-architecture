@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="customemail" sortOrder="200">
+            <label>Custom Email</label>
+        </tab>
+        <section id="custom_email" sortOrder="1" showInDefault="1" showInStore="1" showInWebsite="1" type="text">
+            <tab>customemail</tab>
+            <label>Custom Email Configuration</label>
+            <resource>RLTSquare_CustomEmailSender::key1</resource>
+            <group id="general" type="text" showInWebsite="1" showInStore="1" showInDefault="1" sortOrder="1">
+                <label>General Settings</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/Disable Custom Email Sending.</comment>
+                </field>
+                <field id="from_email" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>From</label>
+                    <validate>required-entry</validate>
+                    <comment>Email will be sent from this address.</comment>
+                </field>
+                <field id="from_name" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Name</label>
+                    <validate>required-entry</validate>
+                    <comment>Email will be sent by this name.</comment>
+                </field>
+                <field id="to_email" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>To</label>
+                    <validate>required-entry</validate>
+                    <comment>Email will be sent to this address.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
